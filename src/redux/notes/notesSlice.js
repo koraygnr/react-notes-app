@@ -19,7 +19,7 @@ export const notesSlice = createSlice({
         activeColor: (localStorage.getItem("activeColor") ? localStorage.getItem("activeColor") : "green.300"),
         filtered: "",
         currentNote: [],
-        activeCategory: ""
+        activeCategory: (localStorage.getItem("activeCategory") ? localStorage.getItem("activeCategory") : "")
         
     },
     reducers: {
@@ -59,6 +59,8 @@ export const notesSlice = createSlice({
         },
         category: (state, action) => {
             state.activeCategory = action.payload
+            localStorage.setItem("activeCategory", action.payload)
+
         }
 
     }

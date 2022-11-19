@@ -16,8 +16,9 @@ function Search() {
 
 
     return (
-        <Box display="flex" m="0 auto" justifyContent="center" alignItems="center" textAlign="center" bg='white' rounded='xl' w="25%" minW="160px" boxShadow='lg'>    
-            <InputGroup>
+        <Box display="flex" m="0 auto" justifyContent="center" alignItems="center" textAlign="center" bg='white' rounded='xl' w="25%" minW="200px" boxShadow='lg' > 
+        <Box position="fixed" zIndex="1" bg='white' rounded='xl'>
+        <InputGroup>
                 <InputLeftElement
                     pointerEvents='none'
                     children={<SearchIcon color='gray.300' />}
@@ -32,7 +33,9 @@ function Search() {
                 fontWeight="300"
                 spellCheck="false"
                  />
-            </InputGroup>
+            </InputGroup> 
+        </Box> 
+            
         </Box>
     )
 }

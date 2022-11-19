@@ -7,7 +7,7 @@ import Search from '../Search'
 function Section() {
   return (
     
-    <Box w="100%" minW="300px" bg='gray.200' p="10" overflow="auto">
+    <Box bg='gray.200' p="10">
       <Search/>
       <NoteBox/>
     </Box>
