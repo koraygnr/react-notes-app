@@ -5,7 +5,6 @@ export const getLocalStorage = () => {
     const notes = localStorage.getItem("notes")
     return notes ? JSON.parse(notes) : []
 }
-
 export const setLocalStorage = (notes) => {
     localStorage.setItem("notes", JSON.stringify(notes))
 }
@@ -52,10 +51,9 @@ export const notesSlice = createSlice({
             state.notes.find( (item) => item.id === state.currentNote.id ? item.note = action.payload : "")
             setLocalStorage(state.notes)
         },
-        deleteNote: (state, action) => {
-            const newArr = state.notes.filter( (item) => item.id !== state.currentNote.id )
-            state.notes = newArr
-            setLocalStorage(newArr)
+        deleteNote: (state) => {
+            state.notes = state.notes.filter( (item) => item.id !== state.currentNote.id )
+            setLocalStorage(state.notes)
         },
         category: (state, action) => {
             state.activeCategory = action.payload
