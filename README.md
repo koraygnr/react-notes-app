@@ -6,6 +6,10 @@ Demo -> https://koraygnr.github.io/react-notes-app
 
 ![Önizleme](https://i.hizliresim.com/ezxevn5.png)
 
+### New Feature Added User Card Size Can Be Customized🤩🚀
+![Önizleme](https://i.hizliresim.com/dmulqwo.gif)
+
+
 
 
 # Getting Started with Create React App
