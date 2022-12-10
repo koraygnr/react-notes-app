@@ -5,13 +5,13 @@ import styles from "./NoteBox.module.css"
 import { onClickNote } from "../../redux/notes/notesSlice"
 import PopUp from '../PopUp'
 
-
 function NoteBox( ) {
 
     const [isOpen, setIsOpen] = useState(false)
     const category = useSelector(state => state.notes.activeCategory)
     const notes = useSelector(state => state.notes.notes)
     const filtered = useSelector(state => state.notes.filtered)
+    let cardSize = useSelector(state => state.notes.cardSize)
 
     let filteredNotes
     
@@ -23,20 +23,18 @@ function NoteBox( ) {
         filteredNotes = notes.filter( (item) => item.color === category)
     }
 
-
     const dispatch = useDispatch()
     const noteSubmit = (item) => {
         dispatch(onClickNote(item)) 
         setIsOpen(true)
     }
 
-
     return (
         <>
         <Box display="flex" justifyContent="center" flexWrap="wrap" flexDirection="row" pt="5">
             {filteredNotes.map(item =>
                     <Box key={item.id}
-                        w="250px" h="250px" m="5" p="6" bg={item.color}
+                        w={`${cardSize}px`} h={`${cardSize}px`} m="5" p="6" bg={item.color}
                         className={styles.box}
                         borderRadius="16"
                         rounded='xl'

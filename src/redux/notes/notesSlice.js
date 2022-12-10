@@ -18,7 +18,8 @@ export const notesSlice = createSlice({
         activeColor: (localStorage.getItem("activeColor") ? localStorage.getItem("activeColor") : "green.300"),
         filtered: "",
         currentNote: [],
-        activeCategory: (localStorage.getItem("activeCategory") ? localStorage.getItem("activeCategory") : "")
+        activeCategory: (localStorage.getItem("activeCategory") ? localStorage.getItem("activeCategory") : ""),
+        cardSize: (localStorage.getItem("cardSize") ? localStorage.getItem("cardSize") : 250 )
         
     },
     reducers: {
@@ -58,11 +59,15 @@ export const notesSlice = createSlice({
         category: (state, action) => {
             state.activeCategory = action.payload
             localStorage.setItem("activeCategory", action.payload)
-
+        },
+        changeCardSize: (state, action) => {
+            state.cardSize = action.payload
+            localStorage.setItem("cardSize", action.payload)
         }
+
 
     }
 })
 
-export const { addNote, changeColor, findNote, onClickNote, edit, deleteNote, category } = notesSlice.actions
+export const { addNote, changeColor, findNote, onClickNote, edit, deleteNote, category, changeCardSize } = notesSlice.actions
 export default notesSlice.reducer

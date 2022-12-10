@@ -4,6 +4,8 @@ import Form from "../Form"
 import Footer from '../Footer'
 import Category from '../Category'
 import { ChevronDownIcon } from '@chakra-ui/icons'
+import { CloseIcon } from '@chakra-ui/icons'
+import RangeInput from '../RangeInput'
 
 
 function Aside() {
@@ -19,7 +21,11 @@ function Aside() {
       <Drawer placement="top" onClose={onClose} isOpen={isOpen}>
         <DrawerOverlay />
         <DrawerContent bg="gray.200">
-          <DrawerHeader></DrawerHeader>
+          <DrawerHeader display="flex" justifyContent="end" alignItems="center" >
+            <Button variant='outline' colorScheme='blackAlpha' onClick={onClose}>
+              <CloseIcon/>
+            </Button>
+          </DrawerHeader>
           <DrawerBody>
             <Box display="flex" justifyContent="center" alignItems="center" flexDirection="column" mb="10">
               <Form/>
@@ -37,9 +43,11 @@ function Aside() {
       {/* Form Component */}
       <Form />
       {/* Category Component */}
-      <Category/>
+      <Category />
+      {/* RangeInput Component */}
+      <RangeInput />
       {/* Footer Component */}
-      <Footer/>
+      <Footer />
     </Box>
     </Hide>
     </>
